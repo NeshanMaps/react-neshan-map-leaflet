@@ -1,5 +1,5 @@
 {
-  "name": "react-neshan-map",
+  "name": "react-neshan-map-leaflet",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
