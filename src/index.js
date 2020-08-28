@@ -7,7 +7,7 @@ ReactDOM.render(
   <React.StrictMode>
     <NeshanMap
       options={{
-        key: "web.CuPbKDMFnkI6fuEh5STP9wDOumwwm5IZzxbjbYYy",
+        key: "YOUR_API_KEY",
         maptype: "dreamy",
         poi: true,
         traffic: false,

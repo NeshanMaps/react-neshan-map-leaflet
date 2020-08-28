@@ -1,68 +1,83 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# ⚛️ React component for 🍃 Neshan Leaflet map.
 
-## Available Scripts
+## Getting started
 
-In the project directory, you can run:
+In the simple case you just need to add `options` prop to `NeshanMap` component and import [`NeshanLeaflet`](https://static.neshan.org/sdk/leaflet/1.4.0/leaflet.css) stylesheet.
 
-### `npm start`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```javascript
+import React from 'react';
+import NeshanMap from 'react-neshan-map-leaflet'
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+import './SimpleMap.css';
 
-### `npm test`
+function SimpleMap() {
+  return (
+    <NeshanMap
+      options={{
+        key: 'YOUR_API_KEY',
+        maptype: 'dreamy',
+        poi: true,
+        traffic: false,
+        center: [35.699739, 51.338097],
+        zoom: 13
+      }}
+    />
+  );
+}
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+export default SimpleMap;
 
-### `npm run build`
+```
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Installation
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+npm:
+```
+npm i react-neshan-map-leaflet
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Features
 
-### `npm run eject`
+### Neshan Maps API Loads on Demand
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+There is no need to place a `<script src=` tag at top of page. The Neshan Maps API loads upon the first usage of the `NeshanMapReactLeaflet` component.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Use Laflet Maps API 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+You can access to Leaflet Maps `L` , `map`  objects by using `onInit`.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```javascript
+...
+<NeshanMap
+  options={{
+    key: 'YOUR_API_KEY',
+    maptype: 'dreamy',
+    poi: true,
+    traffic: false,
+    center: [35.699739, 51.338097],
+    zoom: 13
+  }}
 
-## Learn More
+  onInit={(L, myMap) => {
+    let marker = L.marker([35.699739, 51.338097])
+      .addTo(myMap)
+      .bindPopup('I am a popup.');
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    myMap.on('click', function (e) {
+      marker.setLatLng(e.latlng)
+    });
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+    L.circle([35.699739, 51.348097], {
+      color: 'red',
+      fillColor: '#f03',
+      fillOpacity: 0.5,
+      radius: 500
+    }).addTo(myMap);
+  }}
+/>
 
-### Code Splitting
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+[Example here](https://github.com/AliSeyfollahi/react-neshan-map-leaflet/react-neshan-map-leaflet/example/index.js#L8)
 
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
