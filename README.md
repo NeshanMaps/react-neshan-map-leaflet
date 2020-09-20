@@ -1,6 +1,8 @@
 # ⚛️ React component for 🍃 Neshan Leaflet map.
 
 Developed by [Neshan Maps Platform team](https://platform.neshan.org).
+[For Farsi/Persian document, click here] (https://developers.neshan.org/react-component/).
+
 
 
 ## Getting started
