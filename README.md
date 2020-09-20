@@ -1,5 +1,8 @@
 # ⚛️ React component for 🍃 Neshan Leaflet map.
 
+Developed by [Neshan Maps Platform team](https://platform.neshan.org).
+
+
 ## Getting started
 
 In the simple case you just need to add `options` prop to `NeshanMap` component and import [`NeshanLeaflet`](https://static.neshan.org/sdk/leaflet/1.4.0/leaflet.css) stylesheet.
