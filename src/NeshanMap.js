@@ -7,8 +7,8 @@ const NeshanMap = (props) => {
   const mapEl = useRef(null);
 
   const defaultStyle = {
-    width: "600px",
-    height: "450px",
+    width: "100vw",
+    height: "600px",
     margin: 0,
     padding: 0,
     background: "#eee",
