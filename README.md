@@ -19,6 +19,10 @@ import './SimpleMap.css';
 function SimpleMap() {
   return (
     <NeshanMap
+      style={{
+        width: "100vw",
+        height: "600px",
+      }}
       options={{
         key: 'YOUR_API_KEY',
         maptype: 'dreamy',
@@ -55,6 +59,10 @@ You can access to Leaflet Maps `L` , `map`  objects by using `onInit`.
 ```javascript
 ...
 <NeshanMap
+  style={{
+    width: "100vw",
+    height: "600px",
+  }}
   options={{
     key: 'YOUR_API_KEY',
     maptype: 'dreamy',
