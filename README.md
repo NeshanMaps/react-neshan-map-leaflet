@@ -1,11 +1,14 @@
 # ⚛️ React component for 🍃 Neshan Leaflet map.
 
-### Developed by [Neshan Maps Platform team](https://platform.neshan.org).
-### For Farsi/Persian document, [click here](https://developers.neshan.org/react-component/).
+### Developed by [Neshan Maps Platform](https://platform.neshan.org).
+#### [Neshan Maps React Component - Farsi/Persian Document](https://platform.neshan.org/react-component/).
 
 
 
 ## Getting started
+
+### This version is deprecated. Check out the latest version [here](https://platform.neshan.org/react-component/).
+
 
 In the simple case you just need to add `options` prop to `NeshanMap` component and import [`NeshanLeaflet`](https://static.neshan.org/sdk/leaflet/1.4.0/leaflet.css) stylesheet.
 
